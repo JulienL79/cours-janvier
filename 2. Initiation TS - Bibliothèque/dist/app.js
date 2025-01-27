@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const User_1 = require("./class/User");
+const Book_1 = require("./class/Book");
+const Library_1 = require("./class/Library");
+const user1 = new User_1.User('Jean-Jacque', 'jj@gmail.com');
+const user2 = new User_1.User('Jean-Claude', 'jc@gmail.com');
+const user3 = new User_1.User('Jean-Marie', 'jm@gmail.com');
+const book1 = new Book_1.Book('Harry Potter 1', 'JK Rowling', new Date(2011), 'ABC1');
+const book2 = new Book_1.Book('Harry Potter 2', 'JK Rowling', new Date(2012), 'ABC2');
+const book3 = new Book_1.Book('Harry Potter 3', 'JK Rowling', new Date(2013), 'ABC3');
+const library = new Library_1.Library([user1, user2, user3], [book1, book2, book3]);
+library.borrowBook(user2, book1);
+console.log(library);
