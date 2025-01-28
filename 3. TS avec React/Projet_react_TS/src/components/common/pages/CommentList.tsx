@@ -1,12 +1,14 @@
 import { Comment } from "@common-molecules/Comment"
 import { IComments } from "types/Comments"
 import { useComments } from "@hooks/queries"
+import { useDeleteComment } from "@hooks/mutations"
 import { Skeleton } from "@common-atoms/Skeleton"
 
 export const CommentList = () => {
     const {data, isLoading, isError, error, refetch} = useComments()
+    const { isPending } = useDeleteComment(); 
 
-    if (isLoading) {
+    if (isLoading || isPending) {
         const skeletons = Array.from({ length: 5 }, (_, i) => i)
         return (
             <div>
