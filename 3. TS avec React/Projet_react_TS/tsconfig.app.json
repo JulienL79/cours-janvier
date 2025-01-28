@@ -34,7 +34,9 @@
       "@features-templates/*": ["components/features/templates/*"],
       "@features-pages/*": ["components/features/pages/*"],
 
-      "@store/*": ["store/*"]
+      "@store/*": ["store/*"],
+      "@api/*": ["api/*"],
+      "@hooks/*": ["hooks/*"]
     }
   },
   "include": ["src"]
